@@ -1,0 +1,34 @@
+import java.util.Date;
+
+public class TestDate
+{
+	public static void main(String[] args) 
+	{
+		Date d1 = new Date();
+		System.out.println(d1.toString());
+
+		Date d2 = new Date(1000000000);
+		System.out.println(d2.toString());
+
+		if(d1.after(d2))
+		{
+			System.out.println("true");
+		}
+		else
+		{
+			System.out.println("false");
+		}
+
+		if(d1.before(d2))
+		{
+			System.out.println("true");
+		}
+		else
+		{
+			System.out.println("false");
+		}
+
+		long l = d1.getTime();
+		System.out.println(l);
+	}
+}
