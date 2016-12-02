@@ -1,0 +1,50 @@
+public class TestF extends Ab
+{
+	void fun()
+	{
+		System.out.println("fun");
+	}
+	public static void main(String[] args) 
+	{
+		Ab a=new TestF();
+		a.fun();
+		a.fun1();
+		ImIn Im=new ImIn();
+		Im.fun2();
+		Im.fun3();
+		Im.fun4();
+		
+	}
+}
+
+abstract class Ab
+{
+	int a=10;
+	abstract void fun();
+	void fun1()
+	{
+		System.out.println("fun1");
+	}	
+}
+interface In
+{
+	public static final int mac=100; 
+	public void fun2();
+	public void fun3();
+	default void fun4()
+	{
+		System.out.println("fun4");
+	}
+
+}
+class ImIn implements In
+{
+	public void fun2()
+	{
+		System.out.println("fun2()");
+	}
+	public void fun3()
+	{
+		System.out.println("fun3()");
+	}
+}

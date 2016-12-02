@@ -1,0 +1,11 @@
+
+public class TestQ
+{
+	public static void main(String[] args) 
+	{
+		String s="A1B2C3D4E5F6G7H8";
+		StringBuffer value=new StringBuffer(s);
+		String[] value1=value.split(//d);
+		System.println(value1[2]);
+	}
+}

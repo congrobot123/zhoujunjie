@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class TestB 
+{
+	public static void main(String[] args) 
+	{
+		String value;
+		int a=0,b=0,c=0,d=0;
+		Scanner sc=new Scanner(System.in);
+		sc.useDelimiter("\n");
+		value=sc.next();
+		value=value.substring(0,value.length()-1);
+		for(int i=0;i<value.length();i++)
+		{
+			if(value.charAt(i)<='z'&&value.charAt(i)>='A')
+				a++;
+			else if(value.charAt(i)<='9'&&value.charAt(i)>='0')
+				b++;
+			else if(value.charAt(i)==' ')
+				c++;
+			else 
+				d++;
+		}
+		System.out.println("字母 "+a+"数字 "+b+"空格 "+c+"其它 "+d);
+
+	}
+}

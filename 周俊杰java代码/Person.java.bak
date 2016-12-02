@@ -1,0 +1,49 @@
+public class Person  
+{
+	head head;
+	leg leg;
+	arm arm;
+	body body;
+	Person(head head,leg leg,arm arm,body body)
+	{
+		this.head=head;
+		this.leg=leg;
+		this.arm=arm;
+		this.body=body;
+	}
+
+	public static void main(String[] args) 
+	{
+
+		Person p=new Person(head,leg,arm,body);
+	}
+}
+class head
+{
+	head()
+	{
+		System.out.println("head");
+	}
+}
+class leg
+{
+	leg()
+	{
+		System.out.println("leg");
+
+	}
+}
+class arm
+{
+	arm()
+	{
+		System.out.println("arm");
+	}
+}
+class body
+{
+	body()
+	{
+		System.out.println("body");
+	}
+}

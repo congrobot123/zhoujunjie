@@ -1,0 +1,201 @@
+package  Zhoujunjie.CheckOption;
+
+import Zhoujunjie.CheckOption.Help;
+import java.util.Scanner;
+
+public class CheckOption
+{
+	public static int RegistSum;
+	public Register[] R;
+	private int Sum;
+	{
+		Sum=10;
+		R=new Register[Sum];
+		for(int i=0;i<Sum;i++)
+		R[i]=new Register();
+	}
+	private void Read()
+	{
+		
+		System.out.println("                Username    Password    Sex");
+		for(int i=0;i<RegistSum;i++)
+		{
+			System.out.println((i+1)+":               "+regist[i].Username+"   "+regist[i].Password+"    "+regist[i].Sex);
+			
+		}
+	}
+	void Delete()
+	{
+		int k=0;
+		boolean Thischeck=false;
+		String username;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("please input the username:");
+		username=sc.next();
+		for(int i=0;i<RegistSum;i++)
+		{
+			if(regist[i].Username.equals(username))
+			{
+				k=i;
+				Thischeck=true;
+			}
+
+		}
+		
+		if(Thischeck)
+		{
+			for(int i=k;i<RegistSum-1;i++)
+			{
+				regist[i]=regist[i+1];
+			}
+			RegistSum--;
+			System.out.println("Delete in success");
+		}
+		else
+			System.out.println("This username is not in existence");
+	}
+	
+	{
+		for(int i=0;i<10;i++)
+		regist[i]=new Register();
+	}
+	public void InputOption()
+	{
+		boolean HO;
+		String HelpValue;
+		while(true)
+		{
+			if(HelpValue==null)
+			{
+				System.out.print("zhoujumjie@menghui:^$");
+				HelpValue=sc.next();
+				HelpValue=HelpValue.substring(0,HelpValue.length()-1);
+				HO=D.HelpOption(HelpValue);
+				HelpValue=null;
+				if(!HO)
+					break;
+			}
+		}
+	}
+	public boolean HelpOption(String HelpValue)
+	{
+
+
+		if(HelpValue.equals("Help"))
+		{
+			H.Help();
+			return true;
+		}
+		else if(HelpValue.equals("clear"))
+		{
+			for(int i=0;i<35;i++)
+			{
+				System.out.println("");
+			}
+			return true;
+		}
+		else if(HelpValue.equals("S"))
+		{
+			if(Whetherlogin==true)
+				Read();
+			else
+				System.out.println("please it is first to login");
+			return true;
+		}
+		else if(HelpValue.equals("D"))
+		{
+			if(Whetherlogin==true)
+				Delete();
+			else
+				System.out.println("please it is first to login");
+			return true;
+		}
+
+		else if(HelpValue.equals("A"))
+		{
+			try
+			{
+				if(t.Checkadmin())
+				{
+					Whetherlogin=true;
+					
+					System.out.println("Login in success ");
+					return true;
+				}
+				else
+						System.out.println("Login in false");
+			}
+			catch(Exception e)
+			{
+				System.out.println("EXCEPTION");
+			}
+				
+			return true;
+		}
+		
+		else if(HelpValue.equals("L"))
+		{
+			
+			try
+			{
+				if(t.check())
+				{
+					
+					System.out.println("Login in success ");
+					
+				}
+				else
+						System.out.println("Login in false");
+			}
+			catch(Exception e)
+			{
+				System.out.println("EXCEPTION");
+			}
+				
+			return true;
+		}
+		else if(HelpValue.equals("R"))
+		{
+			while(true)
+			{
+				try
+				{
+					t.regist[RegistSum].scan();
+					RegistSum++;
+					for(int i=0;i<RegistSum-1;i++)
+					{
+						if(t.regist[i].Username.equals(t.regist[RegistSum-1].Username))
+						{
+							t.regist[RegistSum]=null;
+							RegistSum--;
+							System.out.println("the username had been register by others");
+							return true;
+						}
+					}
+					
+					//System.out.println(t.regist[RegistSum].Username);
+					
+					break;
+				}
+				catch(Exception ie)
+				{
+					System.out.println("Your password must be numbers,and please input again");
+						
+				}
+				//System.out.println("www");
+				
+			}
+
+
+			return true;
+		}
+		else if(HelpValue.equals("\r"))
+			return true;
+		else if(HelpValue.equals("quit"))
+			return false;
+		else if(HelpValue.equals(""))
+			return true;
+			System.out.println("Your message is false,please input again£¡");
+		return true;
+	}	
+}

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class TestD 
+{
+	public String str1;
+	public string str2;
+	char[] Sumstr=new char[100];
+	private void scan()
+	{
+		Scanner sc=new Scanner(System.in);		
+		str1=sc.next();
+		str2=sc.next();
+	}
+	public void calculate()
+	{
+		scan();
+		for(int i=0;i<str1.length();i++ )
+			Sumstr[i]=str1.charAt(i);
+		for(int j=0;j<str.length();j++)
+			Sumstr[i]=str2.charAt(j);
+		for(int i=0;i<str1.length()+str2.length();i++)
+			System.out.println(Sumstr[i]);
+		
+	}
+	public static void main(String[] args) 
+	{
+		TestD s=new TestD();
+		s.calculate();
+	}
+}

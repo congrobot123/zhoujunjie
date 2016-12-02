@@ -1,0 +1,46 @@
+class Test31 
+{
+	int a[]={2,32,5,6,3,1,7};
+	int Sum=7;
+	public static void main(String[] args) 
+	{
+		int instead=0,t=0;
+		Test31 q=new Test31();
+		for(int i=0;i<q.Sum;i++)
+		{
+			System.out.print(q.a[i]+" ");
+			
+		}
+		System.out.print('\n');
+		for(int i=0;i<q.Sum;i++)
+		{
+			if(instead<q.a[i])
+			{
+				instead=q.a[i];
+				t=i;
+			}
+		}
+		instead=q.a[t];
+		q.a[t]=q.a[0];
+		q.a[0]=instead;
+		
+		for(int i=0;i<q.Sum;i++)
+		{
+			if(instead>q.a[i])
+			{
+				instead=q.a[i];
+				t=i;
+				
+			}
+		}
+		instead=q.a[t];
+		q.a[t]=q.a[q.Sum-1];
+		q.a[q.Sum-1]=instead;
+		for(int i=0;i<q.Sum;i++)
+		{
+			System.out.print(q.a[i]+" ");
+		}
+		
+		
+	}
+}

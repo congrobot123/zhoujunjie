@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Test32
+{
+	int a,b,a1,b1;
+	void scan()
+	{
+		Scanner sc=new Scanner(System.in);
+		a=sc.nextInt();
+		a1=a;
+		b=sc.nextInt();
+		b1=b;
+	}
+	void calculate()
+	{
+		int bigger,instead;
+		if(a<b)
+		{
+			bigger=a;
+			a=b;
+			b=bigger;
+		}
+		while(a%b==0)
+		{
+			instead=b;
+			b=a%b;
+			a=instead;
+
+		}
+		System.out.println("最大公约数："+b);
+		System.out.println("最小公倍数："+a1*b1/b);
+
+	}
+	public static void main(String[] args) 
+	{
+		Test32 t=new Test32();
+		t.scan();
+		t.calculate();
+	}
+}

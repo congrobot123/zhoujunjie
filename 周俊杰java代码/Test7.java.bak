@@ -1,0 +1,12 @@
+public class Test
+{
+	public static Test test;
+	public static Test test()
+	{
+		if(test==null)
+		{
+			test=new Test();
+		}
+		return test;
+	}
+}
