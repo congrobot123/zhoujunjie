@@ -1,0 +1,15 @@
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+
+		String str="÷‹abø°c";
+
+		char[] a=str.toCharArray();
+		System.out.println(str.length());
+		System.out.println((int)a[3]);
+
+		for(char temp :a)
+			System.out.println(temp);
+	}
+}
